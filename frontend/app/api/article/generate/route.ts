@@ -11,7 +11,7 @@ const trendingTopics = [
   "Autonomous Vehicle Updates"
 ];
 
-export async function POST(request: NextRequest) {
+export async function POST(_request: NextRequest) {
   try {
     console.log('Next.js API: Generating articles...');
     

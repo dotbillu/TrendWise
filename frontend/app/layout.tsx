@@ -1,5 +1,6 @@
 import './globals.css';
 import './footer.css';
+import Link from 'next/link';
 import Navbar from './components/Navbar';
 import Providers from './providers';
 
@@ -41,10 +42,10 @@ export default function RootLayout({
                 <div className="footer-column">
                   <h3 className="footer-title">Quick Links</h3>
                   <ul className="footer-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/trendwise">Trends</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/admin">Admin</a></li>
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/trendwise">Trends</Link></li>
+                    <li><Link href="/dashboard">Dashboard</Link></li>
+                    <li><Link href="/admin">Admin</Link></li>
                   </ul>
                 </div>
                 <div className="footer-column">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
@@ -39,7 +40,7 @@ export default function DashboardPage() {
     { title: 'Published Articles', value: '24', icon: 'fas fa-newspaper', trend: '+12%' },
     { title: 'Total Views', value: '45.2K', icon: 'fas fa-eye', trend: '+18%' },
     { title: 'Trending Topics', value: '8', icon: 'fas fa-chart-line', trend: '+5%' },
-    { title: 'SEO Score', value: '92%', icon: 'fas fa-search', trend: '+3%' }
+    { title: 'SEO Score', value: '92%', icon: 'fas fa-search', trend: '+3%' },
   ];
 
   const recentArticles = [
@@ -124,10 +125,12 @@ export default function DashboardPage() {
             <div className="profile-card">
               <div className="profile-avatar">
                 {session.user?.image ? (
-                  <img 
-                    src={session.user.image} 
-                    alt={session.user.name || 'User'} 
+                  <Image
+                    src={session.user.image}
+                    alt={session.user.name || 'User'}
                     className="avatar-image"
+                    width={80}
+                    height={80}
                   />
                 ) : (
                   <i className="fas fa-user"></i>

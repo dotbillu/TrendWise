@@ -2,6 +2,7 @@
 
 import { generateArticles } from 'lib/api';
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -59,7 +60,7 @@ export default function AdminPage() {
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 2000));
       setMessage(`Added ${mockArticles.length} demo articles! (Note: These are mock articles for demonstration)`);
-    } catch (error) {
+    } catch (_error) {
       setMessage('Failed to add mock articles.');
     } finally {
       setIsGenerating(false);
@@ -126,10 +127,9 @@ export default function AdminPage() {
             <h1 className="hero-title">Admin Panel</h1>
             <p className="hero-subtitle">Content Management & Analytics</p>
             <p className="hero-description">
-              {session 
-                ? `Welcome back, ${session.user?.name}! Manage your content, generate articles from trending topics, and monitor your platform's performance.`
-                : 'Sign in to access powerful content management tools and AI-powered article generation.'
-              }
+              {session
+                ? `Welcome back, ${session.user?.name}! Manage your content, generate articles from trending topics, and monitor your platform&apos;s performance.`
+                : 'Sign in to access powerful content management tools and AI-powered article generation.'}
             </p>
             {!session && (
               <div className="hero-actions">
@@ -145,7 +145,13 @@ export default function AdminPage() {
               <div className="admin-icon">
                 {session ? (
                   session.user?.image ? (
-                    <img src={session.user.image} alt="Admin" className="admin-avatar" />
+                    <Image
+                      src={session.user.image}
+                      alt="Admin"
+                      className="admin-avatar"
+                      width={80}
+                      height={80}
+                    />
                   ) : (
                     <i className="fas fa-user-shield"></i>
                   )

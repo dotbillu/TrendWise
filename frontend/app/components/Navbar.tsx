@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSession, signOut } from 'next-auth/react';
+import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import './Navbar.css';
 
@@ -64,10 +65,12 @@ export default function Navbar() {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   {session.user?.image ? (
-                    <img
+                    <Image
                       src={session.user.image}
                       alt="User Profile"
                       className="user-avatar"
+                      width={32}
+                      height={32}
                     />
                   ) : (
                     <div className="user-avatar-placeholder">

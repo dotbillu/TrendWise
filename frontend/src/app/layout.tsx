@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Link from 'next/link';
 import './globals.css';
 import Providers from './providers';
 
@@ -37,9 +38,9 @@ export default function RootLayout({
           <div className="nav-container">
             <div className="logo">TrendWise</div>
             <ul className="nav-links">
-              <li><a href="/">Home</a></li>
-              <li><a href="/trends">Trends</a></li>
-              <li><a href="/admin">Admin</a></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/trends">Trends</Link></li>
+              <li><Link href="/admin">Admin</Link></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
             <button className="mobile-menu-toggle" style={{ display: 'none' }}>
@@ -69,9 +70,9 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><a href="/" className="opacity-90 hover:opacity-100 transition-opacity">Home</a></li>
-                  <li><a href="/trends" className="opacity-90 hover:opacity-100 transition-opacity">Trends</a></li>
-                  <li><a href="/admin" className="opacity-90 hover:opacity-100 transition-opacity">Admin</a></li>
+                  <li><Link href="/" className="opacity-90 hover:opacity-100 transition-opacity">Home</Link></li>
+                  <li><Link href="/trends" className="opacity-90 hover:opacity-100 transition-opacity">Trends</Link></li>
+                  <li><Link href="/admin" className="opacity-90 hover:opacity-100 transition-opacity">Admin</Link></li>
                 </ul>
               </div>
               <div>
