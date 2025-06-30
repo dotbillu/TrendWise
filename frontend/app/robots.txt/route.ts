@@ -1,8 +1,10 @@
 export async function GET() {
+  const baseUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000';
+  
   const robots = `User-agent: *
 Allow: /
 
-Sitemap: http://localhost:3000/sitemap.xml`;
+Sitemap: ${baseUrl}/sitemap.xml`;
 
   return new Response(robots, {
     headers: {
