@@ -3,8 +3,8 @@ import axios from 'axios';
 // Get the base URL for API calls
 const getApiBaseUrl = () => {
   // If we have an external API URL, use it
-  if (process.env.NEXT_PUBLIC_API_URL) {
-    return process.env.NEXT_PUBLIC_API_URL;
+  if (process.env.NEXT_PUBLIC_BACKEND_URL) {
+    return process.env.NEXT_PUBLIC_BACKEND_URL;
   }
   
   // For client-side, use the current origin + /api
@@ -33,7 +33,7 @@ export const fetchArticles = async () => {
     console.error('Error fetching articles:', error);
     
     // If external backend fails, try Next.js API routes directly
-    if (process.env.NEXT_PUBLIC_API_URL) {
+    if (process.env.NEXT_PUBLIC_BACKEND_URL) {
       try {
         console.log('Trying fallback API...');
         const fallbackUrl = typeof window !== 'undefined' 
@@ -59,7 +59,7 @@ export const generateArticles = async () => {
     console.error('Error generating articles:', error);
     
     // If external backend fails, try Next.js API routes directly
-    if (process.env.NEXT_PUBLIC_API_URL) {
+    if (process.env.NEXT_PUBLIC_BACKEND_URL) {
       try {
         console.log('Trying fallback API for generation...');
         const fallbackUrl = typeof window !== 'undefined' 
