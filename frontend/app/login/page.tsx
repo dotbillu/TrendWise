@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +8,24 @@ import Link from 'next/link';
 export default function LoginPage() {
   const { data: session, status } = useSession();
   const [isLoading, setIsLoading] = useState(false);
+  const [hasShownAlert, setHasShownAlert] = useState(false);
+
+  useEffect(() => {
+    // Check if alert has been shown in this session
+    const alertShown = sessionStorage.getItem('trendwise-login-alert-shown');
+    if (alertShown) {
+      setHasShownAlert(true);
+    }
+  }, []);
 
   const handleSignIn = async (provider: string) => {
+    // Show alert only once per session
+    if (!hasShownAlert) {
+      alert("The site has been inactive for a while, so this login process might take up to 30 seconds to activate the backend. Once it's up, your experience will be smooth and fast.");
+      setHasShownAlert(true);
+      sessionStorage.setItem('trendwise-login-alert-shown', 'true');
+    }
+
     setIsLoading(true);
     try {
       await signIn(provider, { callbackUrl: '/dashboard' });
