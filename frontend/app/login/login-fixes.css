@@ -1,0 +1,72 @@
+/* Login Page CSS Fixes */
+
+/* 1. Sign Out button alignment fix */
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 2. User profile image padding fix */
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* 3. Feature cards styling improvements */
+.feature-card {
+  background-color: #10152f;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: scale(1.02);
+}
+
+/* 4. Icon alignment inside cards */
+.feature-card .text-3xl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* 5. Security items alignment fix */
+.security-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* Override existing flex classes for better button alignment */
+.flex.flex-col.sm\:flex-row.gap-4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .top-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .flex.flex-col.sm\:flex-row.gap-4 {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
