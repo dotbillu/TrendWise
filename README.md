@@ -1,21 +1,114 @@
-## 🛡️ Configs & Secrets Moved to `.env`
+# 📈 TrendWise
 
-This update moves all sensitive data, API keys, and environment-specific configurations to `.env` files to improve security and make the application deployment-ready.
+A smart content performance analyzer designed to help users track and visualize trends in online articles using AI-backed insights and visual dashboards.
 
-### ✨ Key Changes:
+🔗 **Live Demo:** [https://trend-wise-five.vercel.app/](https://trend-wise-five.vercel.app/)  
+💼 **Portfolio:** [https://dotbillu.github.io/Portfolio/](https://dotbillu.github.io/Portfolio/)
 
-- **Secrets Removed from Code:** All hardcoded API keys (OpenAI/Gemini/RapidAPI), MongoDB connection strings, and static URLs have been replaced with `process.env` variables.
-- **Centralized Configuration:** Environment-specific settings are now managed in `.env` files, making it easy to switch between local, development, and production setups.
-- **Enhanced Security:** `.env.*` files are listed in `.gitignore` to prevent accidental exposure of sensitive credentials.
-- **Deployment Ready:** The application is now fully prepared for deployment on platforms like Vercel, Railway, or any other modern hosting service.
+---
 
-### 🚀 How to Use:
+## 🧠 Overview
 
-1.  **Create a `.env.local` file** in the `frontend` directory and a `.env` file in the `backend` directory.
-2.  **Populate the files** with the necessary environment variables, following the examples in `.env.example` (if available).
-3.  **Run the application** as usual. The code will automatically load the variables from the corresponding `.env` file.
+**TrendWise** allows users to:
 
-This refactor ensures a cleaner, more secure, and scalable codebase. ✨
- 
+- 📰 Submit articles for analysis
+- 📊 Get keyword extraction and tag suggestions
+- 🧵 View top comments and discussion trends
+- 🔐 Log in securely using Google OAuth
+- ⚡ Auto-generates metadata for content optimization
 
- i will updaaate it soon
+It's ideal for bloggers, media analysts, or anyone wanting to stay on top of content relevance and engagement.
+
+---
+
+## ✨ Features
+
+- 🔍 **Real-time content analysis**
+- 📌 **Trending keyword & tag detection**
+- 🗨️ **Comment sentiment overview**
+- 📈 **Content-level analytics dashboard**
+- 🔒 **Google Sign-In via NextAuth**
+- 🎨 **Modern responsive UI with grain patterns & Inter fonts**
+
+---
+
+## 🛠️ Tech Stack
+
+| Frontend        | Backend             | Auth         | Hosting        |
+|-----------------|---------------------|--------------|----------------|
+| Next.js 14      | Express.js + Node   | NextAuth.js  | Vercel & Render |
+| Tailwind CSS    | MongoDB (Mongoose)  | Google OAuth |                |
+| TypeScript      | REST API            |              |                |
+
+---
+
+## ⚙️ Setup Instructions
+
+> Prerequisites: Node.js, MongoDB Atlas, Google Cloud OAuth setup
+
+1. **Clone this repo:**
+
+   ```bash
+   git clone https://github.com/yourusername/trendwise.git
+   cd trendwise
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables:**
+
+   Create `.env.local` in `/client` and `.env` in `/server` with the following:
+
+   ```env
+   # Frontend (client/.env.local)
+   NEXT_PUBLIC_BACKEND_URL=https://trendwise-mt1w.onrender.com
+   NEXT_PUBLIC_FRONTEND_URL=https://trend-wise-five.vercel.app
+   NEXTAUTH_URL=https://trend-wise-five.vercel.app
+   NEXTAUTH_SECRET=your-32-byte-random-secret
+   GOOGLE_CLIENT_ID=your-client-id
+   GOOGLE_CLIENT_SECRET=your-client-secret
+   ```
+
+   ```env
+   # Backend (server/.env)
+   MONGODB_URI=your-mongodb-connection-uri
+   ```
+
+4. **Run locally:**
+
+   ```bash
+   # Start backend
+   cd server
+   npm start
+
+   # Start frontend (in another terminal)
+   cd client
+   npm run dev
+   ```
+
+---
+
+## 🚀 Deployment
+
+- **Frontend:** Hosted on Vercel
+- **Backend API:** Deployed on Render
+
+Make sure environment variables are properly configured in Vercel and Render dashboards.
+
+---
+
+## 👨‍💻 Developer
+
+Built by Abhay Jha  
+💼 [Portfolio](https://dotbillu.github.io/Portfolio/)  
+💌 Reach out for collaborations or feedback!
+
+---
+
+## 📝 License
+
+MIT License — feel free to use, modify, and build on top of it 🚀

@@ -493,8 +493,9 @@ export default function AdminPage() {
 
         .actions-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2.5rem;
+          align-items: start;
         }
 
         .action-card {
@@ -503,6 +504,10 @@ export default function AdminPage() {
           border-radius: 15px;
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s ease;
+          height: fit-content;
+          min-height: 280px;
+          display: flex;
+          flex-direction: column;
         }
 
         .action-card:hover {
@@ -538,6 +543,7 @@ export default function AdminPage() {
           color: #4a5568;
           line-height: 1.6;
           margin-bottom: 1.5rem;
+          flex-grow: 1;
         }
 
         .action-button, .btn-primary {
@@ -726,6 +732,27 @@ export default function AdminPage() {
 
           .stats-grid, .actions-grid {
             grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          .action-card {
+            min-height: auto;
+            padding: 1.5rem;
+          }
+
+          .container {
+            padding: 0 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .actions-grid {
+            gap: 1rem;
+          }
+          
+          .action-card {
+            padding: 1rem;
+            min-height: auto;
           }
         }
       `}</style>
