@@ -7,6 +7,22 @@ A smart content performance analyzer designed to help users track and visualize 
 
 ---
 
+## 🖼️ Screenshots
+
+<p align="center">
+  <img src="images/2025-06-30_23-55.png" alt="Dashboard Screenshot" width="600"/>
+  <br/>
+  <img src="images/2025-06-30_23-55_1.png" alt="Analysis Screenshot" width="600"/>
+  <br/>
+  <img src="images/2025-06-30_23-55_2.png" alt="Trends Screenshot" width="600"/>
+  <br/>
+  <img src="images/2025-06-30_23-55_3.png" alt="Comments Screenshot" width="600"/>
+  <br/>
+  <img src="images/2025-06-30_23-58.png" alt="Login Screenshot" width="600"/>
+</p>
+
+---
+
 ## 🧠 Overview
 
 **TrendWise** allows users to:
