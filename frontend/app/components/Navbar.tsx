@@ -47,6 +47,9 @@ export default function Navbar() {
           <Link href="/trendwise" className={`nav-link ${pathname === '/trendwise' ? 'nav-link-active' : ''}`}>
             Trends
           </Link>
+          <Link href="/articles" className={`nav-link ${pathname === '/articles' ? 'nav-link-active' : ''}`}>
+            Articles
+          </Link>
           
           {/* Show authenticated user links */}
           {status === 'authenticated' ? (

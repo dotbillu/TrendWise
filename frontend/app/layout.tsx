@@ -44,6 +44,7 @@ export default function RootLayout({
                   <ul className="footer-links">
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/trendwise">Trends</Link></li>
+                    <li><Link href="/articles">Articles</Link></li>
                     <li><Link href="/dashboard">Dashboard</Link></li>
                     <li><Link href="/admin">Admin</Link></li>
                   </ul>

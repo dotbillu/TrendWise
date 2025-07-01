@@ -6,6 +6,7 @@ const ArticleSchema = new mongoose.Schema({
   meta: String,
   content: String,
   media: [String],
+  url: String, // Add URL field for frontend display
   createdAt: { type: Date, default: Date.now }
 });
 
